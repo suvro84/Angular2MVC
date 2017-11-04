@@ -17,8 +17,8 @@ var FetchDataComponent = (function () {
         // api / userapi /
         http.get('api/SampleDataService/WeatherForecasts').subscribe(function (result) {
             debugger;
-            alert(result.json());
-            alert(_this.forecasts);
+            //alert(result.json());
+            //alert(this.forecasts);
             _this.forecasts = result.json();
         });
     }
