@@ -15,12 +15,12 @@ using System.Net.Http;
 using Angular2MVC.DBContext;
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace Angular2ASPCORE.Controllers
+namespace Angular2MVC.Controllers
 {
 	//[Produces("application/json")]
 	//[Route("api/StudentMastersAPI")]
     [RoutePrefix("api/StudentMastersAPI")]
-    public class StudentMastersAPI : BaseAPIController
+    public class StudentMastersAPIController : BaseAPIController
     {
         //private readonly studentContext _context;
 
@@ -70,7 +70,7 @@ namespace Angular2ASPCORE.Controllers
         //    return _context.StudentMasters.Any(e => e.StdID == id);
         //}
         [HttpPost]
-        [Route("StudentMastersAPI")]
+        [Route("InsertStudents")]
         public HttpResponseMessage Post([FromBody] StudentMaster studentMasters)
         {
             UserDB.StudentMasters.Add(studentMasters);

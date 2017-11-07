@@ -44,7 +44,7 @@ export class RegistrationComponent implements OnInit {
     addStudentsDetails() {
         var headers = new Headers();
         headers.append('Content-Type', 'application/json; charset=utf-8');
-        this.http.post('api/StudentMastersAPI', JSON.stringify(this.students), { headers: headers }).subscribe();
+        this.http.post('api/StudentMastersAPI/InsertStudents', JSON.stringify(this.students), { headers: headers }).subscribe();
         alert("Student Detail Inserted");
         this.getData();
     }
