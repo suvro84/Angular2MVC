@@ -1,83 +1,66 @@
-﻿
+﻿import { Component, Injectable, Inject, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+//import { Http, Response } from '@angular/http';
+import 'rxjs/add/operator/map';
 
-//import { Component } from '@angular/core';
-//import { Http } from "@angular/http";
-
-
-
-import { Component, Injectable, Inject } from '@angular/core';
 import { NgIf, NgFor } from '@angular/common';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { FormsModule } from '@angular/forms';
-//import { Http } from "@angular/http";
-
-//import { StudentMasters } from '../../../../Data';
-//import {Observable} from 'rxjs/Observable';
-//import 'rxjs/Rx';
-
-
-
-
-
 @Component({
-    selector: "registration"
-   // directives: [NgFor],
-   // ,template: require('./Registration.component.html')
-    , template: require('app/Components/Registration/Registration.component.html')
-    //, template: 'app/Components/Registration/Registration.component.html'
-   // ,
-
+    selector: "registration",
+    //templateUrl: './registration.component.html' //it's my path, you could change
+    //templateUrl: 'app/components/Registration/registration.component.html' //it's my path, you could change
+   // template: require('./Registration.component.html')
+    templateUrl: 'app/Components/Registration/Registration.component.html'
 })
-export class RegistrationComponent {
-    student: Array<StudentMasters> = []; 
+export class RegistrationComponent implements OnInit {
+
+    ngOnInit(): void {
+        alert('hi');
+        this.getData();
+    }
+
     students = {};
-    myName: string; 
 
-    //public student: StudentMasters[] = [];
-    //myName: string; 
-    constructor(@Inject(Http) public http: Http) {
-        this.myName = "Shanu";      
-        this.getData();       
+    student: IStudentMasters[];
+
+    myName: string;
+
+    constructor(public http: Http) {
+        this.myName = "Shanu";
     }
 
-    getData() {         
-        //this.http.get('/api/StudentMastersAPI/Student')
-        //    .map((responseData) => {
-        //        return responseData.json();
-        //    })
-        //    .map((student: Array<any>) => {
-        //        let result: Array<StudentMasters> = [];
-        //        if (student) {
-        //            student.forEach((student) => {
-        //                result.push(new StudentMasters(student.StdID, student.StdName,
-        //                    student.Email, student.Phone, student.Address));
-        //            });
-        //        }
-        //        return result;
-        //    }) 
-        //    .subscribe(res => this.student = res);
+    getData() {
 
-        this.http.get('/api/StudentMastersAPI/Student').subscribe(result => {
-            alert(result.json());
-            //alert(this.student);
-            this.student = result.json();
-        });
+
+        this.http.get('/api/StudentMastersAPI/Student')
+            .map((response: Response) => <IStudentMasters[]>response.json())
+            .subscribe(
+            studentData => this.student = studentData);
+      //  alert(this.student);
+
     }
 
-    addStudentsDetails() {     
+    addStudentsDetails() {
         var headers = new Headers();
         headers.append('Content-Type', 'application/json; charset=utf-8');
         this.http.post('api/StudentMastersAPI', JSON.stringify(this.students), { headers: headers }).subscribe();
         alert("Student Detail Inserted");
-        this.getData();       
+        this.getData();
     }
 
-    
+
+
 }
-export interface StudentMasters {
-    stdID: number;
-    stdName: string;
-    email: string;
-    phone: string;
-    address: string;
+
+export interface IStudentMasters {
+    StdID: number;
+    StdName: string;
+    Email: string;
+    Phone: string;
+    Address: string;
+}
+
+export class StudentMasters implements IStudentMasters {
+    constructor(public StdID: number, public StdName: string, public Email: string, public Phone: string, public Address: string) { }
 }

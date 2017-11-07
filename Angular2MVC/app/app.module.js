@@ -17,16 +17,17 @@ var app_routing_1 = require("./app.routing");
 var user_component_1 = require("./components/user.component");
 var home_component_1 = require("./components/home.component");
 var fetchdata_component_1 = require("./components/fetchdata/fetchdata.component");
-//import { RegistrationComponent } from './components/Registration/registration.component';
+//import { RegistrationComponent } from './components/Registration/Registration.component';
+var Registration_component_1 = require("./components/Registration/Registration.component");
 var user_service_1 = require("./Service/user.service");
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, forms_1.ReactiveFormsModule, http_1.HttpModule, app_routing_1.routing, ng2_bs3_modal_1.Ng2Bs3ModalModule],
-            declarations: [app_component_1.AppComponent, user_component_1.UserComponent, home_component_1.HomeComponent, fetchdata_component_1.FetchDataComponent],
-            // declarations: [AppComponent, UserComponent, HomeComponent, FetchDataComponent, RegistrationComponent],
+            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, forms_1.ReactiveFormsModule, http_1.HttpModule, app_routing_1.routing, ng2_bs3_modal_1.Ng2Bs3ModalModule],
+            //   declarations: [AppComponent, UserComponent, HomeComponent, FetchDataComponent],
+            declarations: [app_component_1.AppComponent, user_component_1.UserComponent, home_component_1.HomeComponent, fetchdata_component_1.FetchDataComponent, Registration_component_1.RegistrationComponent],
             //  declarations: [AppComponent, UserComponent, HomeComponent],
             providers: [{ provide: common_1.APP_BASE_HREF, useValue: '/' }, user_service_1.UserService],
             bootstrap: [app_component_1.AppComponent]

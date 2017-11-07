@@ -10,7 +10,7 @@
                                 <li><a [routerLink]="['home']">Home</a></li>
                                 <li><a [routerLink]="['user']">Users Management</a></li>
                                 <li><a [routerLink]="['fetchdata']">FetchData</a></li>
-                             
+                              <li><a [routerLink]="['Registration']">Registration</a></li>
                             </ul>
                         </div>
                     </nav>
