@@ -1,4 +1,6 @@
-﻿import { NgModule } from '@angular/core';
+﻿/// <reference path="components/shared/datagrid/datagrid.component.ts" />
+import { NgModule } from '@angular/core';
+
 import { APP_BASE_HREF } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule   } from '@angular/forms';
@@ -11,13 +13,19 @@ import { HomeComponent } from './components/home.component';
 import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
 //import { RegistrationComponent } from './components/Registration/Registration.component';
 import { RegistrationComponent } from './components/Registration/Registration.component';
-import { UserService} from './Service/user.service'
+import { UserService } from './Service/user.service';
+import { DataGrid } from './Components/Shared/DataGrid/datagrid.component';
+import { DataGridColumn, DataGridButton, DataGridEventInformation } from './Components/Shared/DataGrid/datagrid.core';
+
+//import { DataGridColumn, DataGridButton, DataGridEventInformation } from './shared/datagrid/datagrid.core';
+//import { DataGrid } from './components/home.component';
+
 
 @NgModule({
     imports: [BrowserModule, FormsModule, ReactiveFormsModule, HttpModule, routing, Ng2Bs3ModalModule],
      //   declarations: [AppComponent, UserComponent, HomeComponent, FetchDataComponent],
 
-    declarations: [AppComponent, UserComponent, HomeComponent, FetchDataComponent, RegistrationComponent],
+    declarations: [AppComponent, UserComponent, HomeComponent, FetchDataComponent, RegistrationComponent, DataGrid, DataGridColumn, DataGridButton, DataGridEventInformation],
 
   //  declarations: [AppComponent, UserComponent, HomeComponent],
 

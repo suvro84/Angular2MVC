@@ -11,6 +11,7 @@
                                 <li><a [routerLink]="['user']">Users Management</a></li>
                                 <li><a [routerLink]="['fetchdata']">FetchData</a></li>
                               <li><a [routerLink]="['Registration']">Registration</a></li>
+                              <li><a [routerLink]="['/customer/customerinquiry']">Customer Inquiry</a></li>      
                             </ul>
                         </div>
                     </nav>

@@ -6,6 +6,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+/// <reference path="components/shared/datagrid/datagrid.component.ts" />
 var core_1 = require("@angular/core");
 var common_1 = require("@angular/common");
 var platform_browser_1 = require("@angular/platform-browser");
@@ -20,6 +21,10 @@ var fetchdata_component_1 = require("./components/fetchdata/fetchdata.component"
 //import { RegistrationComponent } from './components/Registration/Registration.component';
 var Registration_component_1 = require("./components/Registration/Registration.component");
 var user_service_1 = require("./Service/user.service");
+var datagrid_component_1 = require("./Components/Shared/DataGrid/datagrid.component");
+var datagrid_core_1 = require("./Components/Shared/DataGrid/datagrid.core");
+//import { DataGridColumn, DataGridButton, DataGridEventInformation } from './shared/datagrid/datagrid.core';
+//import { DataGrid } from './components/home.component';
 var AppModule = (function () {
     function AppModule() {
     }
@@ -27,7 +32,7 @@ var AppModule = (function () {
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, forms_1.ReactiveFormsModule, http_1.HttpModule, app_routing_1.routing, ng2_bs3_modal_1.Ng2Bs3ModalModule],
             //   declarations: [AppComponent, UserComponent, HomeComponent, FetchDataComponent],
-            declarations: [app_component_1.AppComponent, user_component_1.UserComponent, home_component_1.HomeComponent, fetchdata_component_1.FetchDataComponent, Registration_component_1.RegistrationComponent],
+            declarations: [app_component_1.AppComponent, user_component_1.UserComponent, home_component_1.HomeComponent, fetchdata_component_1.FetchDataComponent, Registration_component_1.RegistrationComponent, datagrid_component_1.DataGrid, datagrid_core_1.DataGridColumn, datagrid_core_1.DataGridButton, datagrid_core_1.DataGridEventInformation],
             //  declarations: [AppComponent, UserComponent, HomeComponent],
             providers: [{ provide: common_1.APP_BASE_HREF, useValue: '/' }, user_service_1.UserService],
             bootstrap: [app_component_1.AppComponent]
