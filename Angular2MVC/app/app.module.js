@@ -21,6 +21,7 @@ var fetchdata_component_1 = require("./components/fetchdata/fetchdata.component"
 var customer_inquiry_component_1 = require("./Components/Customer/customer-inquiry.component");
 var Registration_component_1 = require("./components/Registration/Registration.component");
 var user_service_1 = require("./Service/user.service");
+var alert_service_1 = require("./Components/Services/alert.service");
 var datagrid_component_1 = require("./Components/Shared/DataGrid/datagrid.component");
 //import { DataGridColumn, DataGridButton, DataGridEventInformation } from './Components/Shared/DataGrid/datagrid.core';
 //import { DataGridColumn, DataGridButton, DataGridEventInformation } from './shared/datagrid/datagrid.core';
@@ -35,7 +36,7 @@ var AppModule = (function () {
             //declarations: [AppComponent, UserComponent, HomeComponent, FetchDataComponent, RegistrationComponent, DataGrid, DataGridColumn, DataGridButton, DataGridEventInformation],
             declarations: [app_component_1.AppComponent, user_component_1.UserComponent, home_component_1.HomeComponent, fetchdata_component_1.FetchDataComponent, Registration_component_1.RegistrationComponent, datagrid_component_1.DataGrid, customer_inquiry_component_1.CustomerInquiryComponent],
             //  declarations: [AppComponent, UserComponent, HomeComponent],
-            providers: [{ provide: common_1.APP_BASE_HREF, useValue: '/' }, user_service_1.UserService],
+            providers: [{ provide: common_1.APP_BASE_HREF, useValue: '/' }, user_service_1.UserService, alert_service_1.AlertService],
             bootstrap: [app_component_1.AppComponent]
         })
     ], AppModule);

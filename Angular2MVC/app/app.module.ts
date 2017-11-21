@@ -14,6 +14,8 @@ import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
 import { CustomerInquiryComponent } from './Components/Customer/customer-inquiry.component';
 import { RegistrationComponent } from './components/Registration/Registration.component';
 import { UserService } from './Service/user.service';
+import { AlertService } from './Components/Services/alert.service';
+
 import { DataGrid } from './Components/Shared/DataGrid/datagrid.component';
 //import { DataGridColumn, DataGridButton, DataGridEventInformation } from './Components/Shared/DataGrid/datagrid.core';
 
@@ -30,7 +32,7 @@ import { DataGrid } from './Components/Shared/DataGrid/datagrid.component';
 
   //  declarations: [AppComponent, UserComponent, HomeComponent],
 
-    providers: [{ provide: APP_BASE_HREF, useValue: '/' }, UserService],
+    providers: [{ provide: APP_BASE_HREF, useValue: '/' }, UserService, AlertService],
     bootstrap: [AppComponent]
 
 })
