@@ -4,7 +4,7 @@ import { DataGridColumn, DataGridButton, DataGridEventInformation } from '../sha
 import { DataGrid } from '../shared/datagrid/datagrid.component';
 import { AlertService } from '../services/alert.service';
 import { CustomerService } from '../services/customer.service';
-import { AlertBoxComponent } from '../shared/alertbox.component';
+import { AlertBoxComponent } from '../Shared/alertbox.component';
 import { Customer } from '../entities/customer.entity';
 import { TransactionalInformation } from '../entities/transactionalinformation.entity';
 //@Input() summary: string;
