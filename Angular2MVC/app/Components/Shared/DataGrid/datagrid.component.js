@@ -147,9 +147,9 @@ var DataGrid = (function () {
     DataGrid = __decorate([
         core_1.Component({
             selector: 'datagrid',
-            styleUrls: ['application/shared/datagrid/datagrid.css'],
+            styleUrls: ['app/Components/Shared/datagrid/datagrid.css'],
             inputs: ['rows: rows', 'columns: columns'],
-            templateUrl: 'application/shared/datagrid/datagrid.component.html' + exports.debugVersion
+            templateUrl: 'app/Components/Shared/datagrid/datagrid.component.html' + exports.debugVersion
         }),
         core_1.Injectable(),
         __metadata("design:paramtypes", [])

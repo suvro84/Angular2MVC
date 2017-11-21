@@ -11,11 +11,11 @@ import { routing } from './app.routing';
 import { UserComponent } from './components/user.component';
 import { HomeComponent } from './components/home.component';
 import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
-//import { RegistrationComponent } from './components/Registration/Registration.component';
+import { CustomerInquiryComponent } from './Components/Customer/customer-inquiry.component';
 import { RegistrationComponent } from './components/Registration/Registration.component';
 import { UserService } from './Service/user.service';
 import { DataGrid } from './Components/Shared/DataGrid/datagrid.component';
-import { DataGridColumn, DataGridButton, DataGridEventInformation } from './Components/Shared/DataGrid/datagrid.core';
+//import { DataGridColumn, DataGridButton, DataGridEventInformation } from './Components/Shared/DataGrid/datagrid.core';
 
 //import { DataGridColumn, DataGridButton, DataGridEventInformation } from './shared/datagrid/datagrid.core';
 //import { DataGrid } from './components/home.component';
@@ -25,7 +25,8 @@ import { DataGridColumn, DataGridButton, DataGridEventInformation } from './Comp
     imports: [BrowserModule, FormsModule, ReactiveFormsModule, HttpModule, routing, Ng2Bs3ModalModule],
      //   declarations: [AppComponent, UserComponent, HomeComponent, FetchDataComponent],
 
-    declarations: [AppComponent, UserComponent, HomeComponent, FetchDataComponent, RegistrationComponent, DataGrid, DataGridColumn, DataGridButton, DataGridEventInformation],
+    //declarations: [AppComponent, UserComponent, HomeComponent, FetchDataComponent, RegistrationComponent, DataGrid, DataGridColumn, DataGridButton, DataGridEventInformation],
+    declarations: [AppComponent, UserComponent, HomeComponent, FetchDataComponent, RegistrationComponent, DataGrid, CustomerInquiryComponent],
 
   //  declarations: [AppComponent, UserComponent, HomeComponent],
 

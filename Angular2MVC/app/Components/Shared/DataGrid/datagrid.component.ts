@@ -8,9 +8,10 @@ export var debugVersion = "?version=" + Date.now();
 
 @Component({
     selector: 'datagrid',
-    styleUrls: ['application/shared/datagrid/datagrid.css'],
+    styleUrls: ['app/Components/Shared/datagrid/datagrid.css'],
     inputs: ['rows: rows', 'columns: columns'],
-    templateUrl: 'application/shared/datagrid/datagrid.component.html' + debugVersion
+    templateUrl: 'app/Components/Shared/datagrid/datagrid.component.html' + debugVersion
+
 })
 
 @Injectable()

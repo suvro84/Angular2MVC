@@ -5,7 +5,7 @@ export var debugVersion = "?version=" + Date.now();
 
 @Component({
     selector: 'alertbox',
-    templateUrl: 'application/shared/alertbox.component.html' + debugVersion
+    templateUrl: 'app/Components/shared/alertbox.component.html' + debugVersion
     //,directives: [AlertComponent]
 })
 

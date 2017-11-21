@@ -11,7 +11,10 @@ import { TransactionalInformation } from '../entities/transactionalinformation.e
 export var debugVersion = "?version=" + Date.now();
 
 @Component({
-    templateUrl: 'application/customer/customer-inquiry.component.html' + debugVersion,
+    templateUrl: 'app/Components/customer/customer-inquiry.component.html' + debugVersion,
+  //  templateUrl: 'app/Components/fetchdata/fetchdata.component.html'
+
+
     //directives: [DataGrid, AlertBoxComponent],
     providers: [AlertService]
 })

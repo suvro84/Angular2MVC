@@ -32,7 +32,7 @@ var AlertBoxComponent = (function () {
     AlertBoxComponent = __decorate([
         core_1.Component({
             selector: 'alertbox',
-            templateUrl: 'application/shared/alertbox.component.html' + exports.debugVersion
+            templateUrl: 'app/Components/shared/alertbox.component.html' + exports.debugVersion
             //,directives: [AlertComponent]
         }),
         __metadata("design:paramtypes", [])

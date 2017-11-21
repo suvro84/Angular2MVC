@@ -24,7 +24,7 @@ var AddressComponent = (function () {
     AddressComponent = __decorate([
         core_1.Component({
             selector: 'address-form',
-            templateUrl: 'application/shared/address.component.html' + exports.debugVersion
+            templateUrl: 'app/Components/shared/address.component.html' + exports.debugVersion
         }),
         __metadata("design:paramtypes", [])
     ], AddressComponent);

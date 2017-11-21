@@ -5,7 +5,7 @@ export var debugVersion = "?version=" + Date.now();
 
 @Component({
     selector: 'address-form',
-    templateUrl: 'application/shared/address.component.html' + debugVersion
+    templateUrl: 'app/Components/shared/address.component.html' + debugVersion
 })
 
 export class AddressComponent implements OnInit {

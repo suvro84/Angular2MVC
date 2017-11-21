@@ -169,7 +169,8 @@ var CustomerInquiryComponent = (function () {
     ], CustomerInquiryComponent.prototype, "datagrid", void 0);
     CustomerInquiryComponent = __decorate([
         core_1.Component({
-            templateUrl: 'application/customer/customer-inquiry.component.html' + exports.debugVersion,
+            templateUrl: 'app/Components/customer/customer-inquiry.component.html' + exports.debugVersion,
+            //  templateUrl: 'app/Components/fetchdata/fetchdata.component.html'
             //directives: [DataGrid, AlertBoxComponent],
             providers: [alert_service_1.AlertService]
         }),
