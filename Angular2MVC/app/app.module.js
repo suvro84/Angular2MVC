@@ -21,22 +21,23 @@ var fetchdata_component_1 = require("./components/fetchdata/fetchdata.component"
 var customer_inquiry_component_1 = require("./Components/Customer/customer-inquiry.component");
 var Registration_component_1 = require("./components/Registration/Registration.component");
 var user_service_1 = require("./Service/user.service");
-var alert_service_1 = require("./Components/Services/alert.service");
 var datagrid_component_1 = require("./Components/Shared/DataGrid/datagrid.component");
 //import { DataGridColumn, DataGridButton, DataGridEventInformation } from './Components/Shared/DataGrid/datagrid.core';
 //import { DataGridColumn, DataGridButton, DataGridEventInformation } from './shared/datagrid/datagrid.core';
 //import { DataGrid } from './components/home.component';
+var customer_service_1 = require("./Components/Services/customer.service");
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, forms_1.ReactiveFormsModule, http_1.HttpModule, app_routing_1.routing, ng2_bs3_modal_1.Ng2Bs3ModalModule],
+            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, forms_1.ReactiveFormsModule, http_1.HttpModule, app_routing_1.AppRoutingModule, ng2_bs3_modal_1.Ng2Bs3ModalModule],
             //   declarations: [AppComponent, UserComponent, HomeComponent, FetchDataComponent],
-            //declarations: [AppComponent, UserComponent, HomeComponent, FetchDataComponent, RegistrationComponent, DataGrid, DataGridColumn, DataGridButton, DataGridEventInformation],
+            //declarations: [AppComponent, UserComponent, HomeComponent, FetchDataComponent, RegistrationComponent, CustomerInquiryComponent, DataGrid,AlertBoxComponent],
             declarations: [app_component_1.AppComponent, user_component_1.UserComponent, home_component_1.HomeComponent, fetchdata_component_1.FetchDataComponent, Registration_component_1.RegistrationComponent, datagrid_component_1.DataGrid, customer_inquiry_component_1.CustomerInquiryComponent],
             //  declarations: [AppComponent, UserComponent, HomeComponent],
-            providers: [{ provide: common_1.APP_BASE_HREF, useValue: '/' }, user_service_1.UserService, alert_service_1.AlertService],
+            providers: [{ provide: common_1.APP_BASE_HREF, useValue: '/' }, user_service_1.UserService, customer_service_1.CustomerService],
+            // providers: [ UserService, CustomerService],
             bootstrap: [app_component_1.AppComponent]
         })
     ], AppModule);

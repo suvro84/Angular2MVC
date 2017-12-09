@@ -1,6 +1,11 @@
-﻿
-<div style="padding-top:20px">
+﻿<div style="padding-top:20px">
     <alert *ngFor="let alert of alerts; let i = index" [type]="alert.type" dismissible="true" (close)="closeAlert(i)">
         <div [innerHTML]="messageBox"></div>
-    </alert>
+    </alert>    
 </div>
+
+<!--<div style="padding-top:20px">
+    <div *ngFor="let alert of alerts; let i = index">
+        <div [innerHTML]="messageBox"></div>
+    </div>
+</div>-->

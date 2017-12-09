@@ -13,21 +13,22 @@ var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var datagrid_core_1 = require("../shared/datagrid/datagrid.core");
 var datagrid_component_1 = require("../shared/datagrid/datagrid.component");
-var alert_service_1 = require("../services/alert.service");
 var customer_service_1 = require("../services/customer.service");
+//import { AlertBoxComponent } from '../Shared/alertbox.component';
 var customer_entity_1 = require("../entities/customer.entity");
 var transactionalinformation_entity_1 = require("../entities/transactionalinformation.entity");
 //@Input() summary: string;
 exports.debugVersion = "?version=" + Date.now();
 var CustomerInquiryComponent = (function () {
-    function CustomerInquiryComponent(alertService, customerService, router) {
-        this.alertService = alertService;
+    //   constructor(private alertService: AlertService, private customerService: CustomerService, private router: Router) {
+    function CustomerInquiryComponent(customerService, router) {
         this.customerService = customerService;
         this.router = router;
         this.title = 'Customer Inquiry';
         this.columns = [];
         this.alerts = [];
         this.currentPageNumber = 1;
+        console.log("Suvrojyoti kipte---------constructor");
         this.currentPageNumber = 1;
         this.autoFilter = false;
         this.totalPages = 0;
@@ -37,6 +38,7 @@ var CustomerInquiryComponent = (function () {
         this.sortExpression = "CompanyName";
     }
     CustomerInquiryComponent.prototype.ngOnInit = function () {
+        console.log("Suvrojyoti kipte---------ngOnInit");
         this.columns.push(new datagrid_core_1.DataGridColumn('customerCode', 'Customer Code', '[{"width": "20%" , "disableSorting": false}]'));
         this.columns.push(new datagrid_core_1.DataGridColumn('companyName', 'Company Name', '[{"width": "30%" , "hyperLink": true, "disableSorting": false}]'));
         this.columns.push(new datagrid_core_1.DataGridColumn('city', 'City', '[{"width": "20%" , "disableSorting": false}]'));
@@ -46,6 +48,7 @@ var CustomerInquiryComponent = (function () {
     };
     CustomerInquiryComponent.prototype.executeSearch = function () {
         var _this = this;
+        console.log('1------executeSearch');
         if (this.runningSearch == true)
             return;
         var miliseconds = 500;
@@ -61,6 +64,7 @@ var CustomerInquiryComponent = (function () {
             customer.sortDirection = _this.sortDirection;
             customer.sortExpression = _this.sortExpression;
             customer.currentPageNumber = _this.currentPageNumber;
+            console.log('2------abc');
             _this.customerService.getCustomers(customer)
                 .subscribe(function (response) { return _this.getCustomersOnSuccess(response); }, function (response) { return _this.getCustomersOnError(response); });
         }, miliseconds);
@@ -75,15 +79,15 @@ var CustomerInquiryComponent = (function () {
         transactionalInformation.sortExpression = this.sortExpression;
         this.customers = response.customers;
         this.datagrid.databind(transactionalInformation);
-        this.alertService.renderSuccessMessage(response.returnMessage);
-        this.messageBox = this.alertService.returnFormattedMessage();
-        this.alerts = this.alertService.returnAlerts();
+        //this.alertService.renderSuccessMessage(response.returnMessage);
+        //this.messageBox = this.alertService.returnFormattedMessage();
+        //this.alerts = this.alertService.returnAlerts();
         this.runningSearch = false;
     };
     CustomerInquiryComponent.prototype.getCustomersOnError = function (response) {
-        this.alertService.renderErrorMessage(response.returnMessage);
-        this.messageBox = this.alertService.returnFormattedMessage();
-        this.alerts = this.alertService.returnAlerts();
+        //this.alertService.renderErrorMessage(response.returnMessage);
+        //this.messageBox = this.alertService.returnFormattedMessage();
+        //this.alerts = this.alertService.returnAlerts();
         this.runningSearch = false;
     };
     CustomerInquiryComponent.prototype.datagridEvent = function (event) {
@@ -170,11 +174,12 @@ var CustomerInquiryComponent = (function () {
     CustomerInquiryComponent = __decorate([
         core_1.Component({
             templateUrl: 'app/Components/customer/customer-inquiry.component.html' + exports.debugVersion,
+            moduleId: module.id
             //  templateUrl: 'app/Components/fetchdata/fetchdata.component.html'
             //directives: [DataGrid, AlertBoxComponent],
-            providers: [alert_service_1.AlertService]
+            //providers: [ CustomerService]
         }),
-        __metadata("design:paramtypes", [alert_service_1.AlertService, customer_service_1.CustomerService, router_1.Router])
+        __metadata("design:paramtypes", [customer_service_1.CustomerService, router_1.Router])
     ], CustomerInquiryComponent);
     return CustomerInquiryComponent;
 }());

@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+require("rxjs/Rx");
 var http_service_1 = require("./http.service");
 var CustomerService = (function () {
     function CustomerService(httpService) {

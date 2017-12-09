@@ -1,15 +1,17 @@
 ﻿import { Customer } from '../entities/customer.entity';
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
-import { Observable } from 'rxjs/Observable';
+import 'rxjs/Rx';
+import { Observable } from 'rxjs/Rx';
 import { Headers, RequestOptions } from '@angular/http';
 import { HttpService } from './http.service';
+import { ChangeDetectorRef } from '@angular/core';
 
 
 @Injectable()
 export class CustomerService {
 
-    constructor(private httpService: HttpService) { }
+    constructor(public httpService: HttpService) { }
 
     public importCustomers(customer: Customer): Observable<any> {
 

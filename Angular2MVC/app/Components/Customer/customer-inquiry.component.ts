@@ -4,7 +4,7 @@ import { DataGridColumn, DataGridButton, DataGridEventInformation } from '../sha
 import { DataGrid } from '../shared/datagrid/datagrid.component';
 import { AlertService } from '../services/alert.service';
 import { CustomerService } from '../services/customer.service';
-import { AlertBoxComponent } from '../Shared/alertbox.component';
+//import { AlertBoxComponent } from '../Shared/alertbox.component';
 import { Customer } from '../entities/customer.entity';
 import { TransactionalInformation } from '../entities/transactionalinformation.entity';
 //@Input() summary: string;
@@ -12,11 +12,12 @@ export var debugVersion = "?version=" + Date.now();
 
 @Component({
     templateUrl: 'app/Components/customer/customer-inquiry.component.html' + debugVersion,
+    moduleId: module.id
   //  templateUrl: 'app/Components/fetchdata/fetchdata.component.html'
 
 
     //directives: [DataGrid, AlertBoxComponent],
-    providers: [AlertService]
+    //providers: [ CustomerService]
 })
 
 export class CustomerInquiryComponent implements OnInit {
@@ -43,8 +44,9 @@ export class CustomerInquiryComponent implements OnInit {
     public delaySearch: Boolean;
     public runningSearch: Boolean;
 
-    constructor(private alertService: AlertService, private customerService: CustomerService, private router: Router) {
-
+ //   constructor(private alertService: AlertService, private customerService: CustomerService, private router: Router) {
+    constructor(private customerService: CustomerService, private router: Router) {
+        console.log("Suvrojyoti kipte---------constructor");
         this.currentPageNumber = 1;
         this.autoFilter = false;
         this.totalPages = 0;
@@ -56,7 +58,7 @@ export class CustomerInquiryComponent implements OnInit {
     }
 
     public ngOnInit() {
-
+        console.log("Suvrojyoti kipte---------ngOnInit");
         this.columns.push(new DataGridColumn('customerCode', 'Customer Code', '[{"width": "20%" , "disableSorting": false}]'));
         this.columns.push(new DataGridColumn('companyName', 'Company Name', '[{"width": "30%" , "hyperLink": true, "disableSorting": false}]'));
         this.columns.push(new DataGridColumn('city', 'City', '[{"width": "20%" , "disableSorting": false}]'));
@@ -68,7 +70,7 @@ export class CustomerInquiryComponent implements OnInit {
     }
 
     private executeSearch(): void {
-
+        console.log('1------executeSearch');
         if (this.runningSearch == true) return;
 
         let miliseconds = 500;
@@ -88,7 +90,7 @@ export class CustomerInquiryComponent implements OnInit {
             customer.sortDirection = this.sortDirection;
             customer.sortExpression = this.sortExpression;
             customer.currentPageNumber = this.currentPageNumber;
-
+            console.log('2------abc');
             this.customerService.getCustomers(customer)
                 .subscribe(
                 response => this.getCustomersOnSuccess(response),
@@ -113,9 +115,9 @@ export class CustomerInquiryComponent implements OnInit {
 
         this.datagrid.databind(transactionalInformation);
 
-        this.alertService.renderSuccessMessage(response.returnMessage);
-        this.messageBox = this.alertService.returnFormattedMessage();
-        this.alerts = this.alertService.returnAlerts();
+        //this.alertService.renderSuccessMessage(response.returnMessage);
+        //this.messageBox = this.alertService.returnFormattedMessage();
+        //this.alerts = this.alertService.returnAlerts();
 
         this.runningSearch = false;
 
@@ -123,9 +125,9 @@ export class CustomerInquiryComponent implements OnInit {
 
     private getCustomersOnError(response): void {
 
-        this.alertService.renderErrorMessage(response.returnMessage);
-        this.messageBox = this.alertService.returnFormattedMessage();
-        this.alerts = this.alertService.returnAlerts();
+        //this.alertService.renderErrorMessage(response.returnMessage);
+        //this.messageBox = this.alertService.returnFormattedMessage();
+        //this.alerts = this.alertService.returnAlerts();
 
         this.runningSearch = false;
 

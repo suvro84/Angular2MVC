@@ -1,5 +1,5 @@
-﻿import { ModuleWithProviders } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+﻿import { ModuleWithProviders, NgModule } from '@angular/core';
+import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
 import { UserComponent } from './components/user.component';
 import { HomeComponent } from './components/home.component';
@@ -9,14 +9,30 @@ import { CustomerInquiryComponent } from './Components/Customer/customer-inquiry
 
 
 
-const appRoutes: Routes = [
-    { path: '', redirectTo: 'home', pathMatch: 'full' },
-    { path: 'home', component: HomeComponent },
-    { path: 'user', component: UserComponent }
-    , { path: 'fetchdata', component: FetchDataComponent }
-    , { path: 'Registration', component: RegistrationComponent }
-     ,  { path: 'customer/customerinquiry', component: CustomerInquiryComponent },
-];
+//const appRoutes: Routes = [
+//    { path: '', redirectTo: 'home', pathMatch: 'full' },
+//    { path: 'home', component: HomeComponent },
+//    { path: 'user', component: UserComponent }
+//    , { path: 'fetchdata', component: FetchDataComponent }
+//    , { path: 'Registration', component: RegistrationComponent }
+//     ,  { path: 'customer/customerinquiry', component: CustomerInquiryComponent },
+//];
 
-export const routing: ModuleWithProviders =
-    RouterModule.forRoot(appRoutes);
+//export const routing: ModuleWithProviders =
+//    RouterModule.forRoot(appRoutes);
+
+
+@NgModule({
+    imports: [
+        RouterModule.forRoot([
+            { path: '', redirectTo: 'home', pathMatch: 'full' },
+            { path: 'home', component: HomeComponent },
+            { path: 'user', component: UserComponent }
+            , { path: 'fetchdata', component: FetchDataComponent }
+            , { path: 'Registration', component: RegistrationComponent }
+            , { path: 'customer/customerinquiry', component: CustomerInquiryComponent }
+        ], { preloadingStrategy: PreloadAllModules })
+    ],
+    exports: [RouterModule]
+})
+export class AppRoutingModule { }
