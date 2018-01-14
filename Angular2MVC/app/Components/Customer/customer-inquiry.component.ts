@@ -12,7 +12,7 @@ export var debugVersion = "?version=" + Date.now();
 
 @Component({
     templateUrl: 'app/Components/customer/customer-inquiry.component.html' + debugVersion,
-    moduleId: module.id
+   // moduleId: module.id
   //  templateUrl: 'app/Components/fetchdata/fetchdata.component.html'
 
 
